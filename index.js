@@ -20,9 +20,7 @@ const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
 app.use(cors())
-server.applyMiddleware({ app });
+server.applyMiddleware({ app, path: '/specialUrl'});
 
-PORT = process.env.PORT || 4000
-app.listen({ port: PORT }, () =>
-  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
-);
+app.listen(process.env.PORT || 3000, 
+	() => console.log("Server is running..."));
