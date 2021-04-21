@@ -16,12 +16,12 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({ typeDefs, resolvers, introspection: true, playground: true });
+const server = new ApolloServer({ typeDefs, resolvers,  playground: true });
 
 const app = express();
 app.use(cors())
-var url = '/specialUrl' 
-server.applyMiddleware({ app, path: url });
+
+server.applyMiddleware({ app });
 
 app.listen(process.env.PORT || 4000, 
-	() => console.log(`🚀 Server ready at ${url}`));
+	() => console.log(`🚀 Server ready at...`));
