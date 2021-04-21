@@ -24,8 +24,4 @@ app.use(cors())
 server.applyMiddleware({ app });
 
 app.listen(process.env.PORT || 4000, 
-<<<<<<< HEAD
-	() => console.log(`🚀 Server ready at ...}`));
-=======
-	() => console.log(`🚀 Server ready at ...`));
->>>>>>> b01c982727f3df21dc5b9c938c6d3ebab19b6231
+	() => console.log(`🚀 Server ready at ...`))
