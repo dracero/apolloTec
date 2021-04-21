@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors')
 const { ApolloServer, gql } = require('apollo-server-express');
 
 // Construct a schema, using GraphQL schema language
@@ -18,8 +19,10 @@ const resolvers = {
 const server = new ApolloServer({ typeDefs, resolvers });
 
 const app = express();
+app.use(cors())
 server.applyMiddleware({ app });
 
-app.listen({ port: (process.env.PORT || 4000) }, () =>
+PORT = process.env.PORT || 4000
+app.listen({ port: PORT }, () =>
   console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`)
 );
