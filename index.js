@@ -16,7 +16,7 @@ const resolvers = {
   },
 };
 
-const server = new ApolloServer({ typeDefs, resolvers,  playground: true });
+const server = new ApolloServer({ typeDefs, resolvers, introspection: true, playground: true });
 
 const app = express();
 app.use(cors())
@@ -24,4 +24,4 @@ app.use(cors())
 server.applyMiddleware({ app });
 
 app.listen(process.env.PORT || 4000, 
-	() => console.log(`🚀 Server ready at...`));
+	() => console.log(`🚀 Server ready at ...`));
